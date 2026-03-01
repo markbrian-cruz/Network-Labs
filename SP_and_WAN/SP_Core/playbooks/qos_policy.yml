@@ -1,0 +1,38 @@
+---
+- name: Define lightweight QoS policy
+  hosts: R1,R5
+  gather_facts: no
+  vars_files:
+    - "../secrets.yml"
+
+  vars:
+    ansible_user: "{{ ssh_username }}"
+    ansible_ssh_pass: "{{ ssh_password }}"
+    ansible_connection: network_cli
+    ansible_network_os: cisco.ios.ios
+
+    class_map_name: VOICE
+    policy_map_name: QOS_POLICY
+
+  tasks:
+    - name: Create class-map for voice traffic (DSCP EF)
+      cisco.ios.ios_config:
+        lines:
+          - "class-map {{ class_map_name }}"
+          - " match ip dscp ef"
+
+    - name: Create policy-map using class-map
+      cisco.ios.ios_config:
+        lines:
+          - "policy-map {{ policy_map_name }}"
+          - " class {{ class_map_name }}"
+          - "  priority percent 30"
+          - " class class-default"
+          - "  fair-queue"
+
+    - name: Save QoS configuration
+      cisco.ios.ios_command:
+        commands:
+          - command: copy running-config startup-config
+            prompt: 'Destination filename \[startup-config\]\?'
+            answer: "\r"

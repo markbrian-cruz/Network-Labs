@@ -1,6 +1,27 @@
-venv/
-*.log
+# --- Secrets & Security ---
 secrets.yml
 .ansible_vault_pass
+
+# --- Python & Virtual Environment ---
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Ansible & Automation Clutter ---
+*.log
+*.retry
+.ansible/
+/ansible.cfg
+hosts.ini
+devices.csv
+
+# --- Device Backups & Lab Artifacts ---
+# We ignore .txt and backup subfolders, but ALLOW the configs/ folder
+*.txt
 lab-router-backups/
 router-backups/
+configs/backups/
+
+# --- System Files ---
+.DS_Store

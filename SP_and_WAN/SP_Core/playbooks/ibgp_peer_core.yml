@@ -1,0 +1,49 @@
+---
+- name: Configure iBGP Peerings
+  hosts: R1,R2,R3,R4,R5
+  gather_facts: no
+  vars_files:
+    - "../secrets.yml"
+
+  vars:
+    ansible_user: "{{ ssh_username }}"
+    ansible_ssh_pass: "{{ ssh_password }}"
+    ansible_connection: network_cli
+    ansible_network_os: cisco.ios.ios
+
+    as_number: 65000
+
+    # Loopback IPs per router
+    loopbacks:
+      R1: 1.1.1.1
+      R2: 2.2.2.2
+      R3: 3.3.3.3
+      R4: 4.4.4.4
+      R5: 5.5.5.5
+
+    # iBGP peers per router (self-contained)
+    ibgp_peers:
+      R1: [R2,R3,R4,R5]
+      R2: [R1,R3,R4,R5]
+      R3: [R1,R2,R4,R5]
+      R4: [R1,R2,R3,R5]
+      R5: [R1,R2,R3,R4]
+
+  tasks:
+    - name: Configure iBGP neighbors
+      cisco.ios.ios_config:
+        parents: "router bgp {{ as_number }}"
+        lines: |
+          {% for peer in ibgp_peers[inventory_hostname] %}
+          neighbor {{ loopbacks[peer] }} remote-as {{ as_number }}
+          neighbor {{ loopbacks[peer] }} update-source Loopback0
+          {% endfor %}
+      notify: Save Configuration
+
+  handlers:
+    - name: Save Configuration
+      cisco.ios.ios_command:
+        commands:
+          - command: copy running-config startup-config
+            prompt: 'Destination filename \[startup-config\]\?'
+            answer: "\r"

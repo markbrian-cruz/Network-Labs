@@ -1,0 +1,27 @@
+---
+- name: Remove all iBGP neighbors
+  hosts:
+    - R1
+    - R2
+    - R3
+    - R4
+    - R5
+  gather_facts: no
+  vars_files:
+    - secrets.yml
+  vars:
+    bgp_as: 65000
+    ibgp_neighbors:
+      - 1.1.1.1
+      - 2.2.2.2
+      - 3.3.3.3
+      - 4.4.4.4
+      - 5.5.5.5
+
+  tasks:
+    - name: Remove iBGP neighbors
+      cisco.ios.ios_config:
+        lines:
+          - "no neighbor {{ item }} remote-as {{ bgp_as }}"
+        save_when: always
+      loop: "{{ ibgp_neighbors }}"

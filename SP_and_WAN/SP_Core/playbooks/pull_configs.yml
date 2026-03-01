@@ -1,0 +1,21 @@
+---
+- name: Pull and Sanitize SP1 Core Configs
+  hosts: routers
+  gather_facts: no
+  vars_files:
+    - secrets.yml
+
+  tasks:
+    - name: Capture Running Configuration
+      cisco.ios.ios_command:
+        commands: "show running-config"
+      register: config_out
+
+    - name: Save Sanitized Config
+      copy:
+        # This regex removes the entire line if it contains any of these keywords:
+        # username, password, secret, community, key-string, or enable secret
+        content: "{{ config_out.stdout[0] | regex_replace('(?m)^.*(username|password|secret|community|key-string|enable\\s+(secret|password)).*$', '') }}"
+        # Saves to the 'configs' folder
+        # Filename will be the router name (e.g., SP1-PE1.cfg)
+        dest: "configs/{{ inventory_hostname }}.cfg"

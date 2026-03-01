@@ -1,0 +1,28 @@
+---
+- name: Leak default route into VRFs (Internet Access)
+  hosts: R1,R5      # Only PE routers
+  gather_facts: no
+  vars_files:
+    - "../secrets.yml"
+  vars:
+    vrfs:
+      CUST_A:
+        default_gateway: 10.0.0.1
+      CUST_B:
+        default_gateway: 10.0.0.1   # Same as CUST_A
+
+  tasks:
+    - name: Inject default route from global into VRF
+      cisco.ios.ios_config:
+        lines:
+          - "ip route vrf {{ item.key }} 0.0.0.0 0.0.0.0 {{ item.value.default_gateway }} global"
+      loop: "{{ vrfs | dict2items }}"
+      notify: Save Configuration
+
+  handlers:
+    - name: Save Configuration
+      cisco.ios.ios_command:
+        commands:
+          - command: "copy running-config startup-config"
+            prompt: 'Destination filename \[startup-config\]\?'
+            answer: "\r"
