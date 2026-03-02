@@ -1,7 +1,9 @@
 # TE_Tunnel_20 Validation Report
-Generated: 2026-03-01 15:51:18.882667
+Generated: 2026-03-02 01:19:15.561791
 
-## SP1-PE1 (PE)
+## SP1-PE1
+Router: SP1-PE1
+Command: show mpls traffic-eng tunnels tunnel 20
 ```
 
 Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
@@ -18,9 +20,9 @@ Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/1, 25
+  OutLabel : FastEthernet0/1, 26
   RSVP Signalling Info:
-       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 20, Tun_Instance 26
+       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 20, Tun_Instance 27
     RSVP Path Info:
       My Address: 10.0.0.6   
       Explicit Route: 10.0.0.7 10.0.0.8 10.0.0.9 5.5.5.5 
@@ -35,17 +37,19 @@ Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
                     5.5.5.5 
   History:
     Tunnel:
-      Time since created: 3 hours, 53 minutes
-      Time since path change: 1 hours, 53 minutes
+      Time since created: 1 hours, 39 minutes
+      Time since path change: 39 minutes
     Current LSP:
-      Uptime: 1 hours, 53 minutes
+      Uptime: 39 minutes
       Selection: reoptimation
     Prior LSP:
-      ID: path option 2 [25]
+      ID: path option 2 [26]
       Removal Trigger: reoptimization completed
 ```
 
-## SP1-PE5 (PE)
+## SP1-PE5
+Router: SP1-PE5
+Command: show mpls traffic-eng tunnels tunnel 20
 ```
 
 Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
@@ -62,9 +66,9 @@ Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/1, 26
+  OutLabel : FastEthernet0/1, 25
   RSVP Signalling Info:
-       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 20, Tun_Instance 24
+       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 20, Tun_Instance 25
     RSVP Path Info:
       My Address: 10.0.0.9   
       Explicit Route: 10.0.0.8 10.0.0.7 10.0.0.6 1.1.1.1 
@@ -79,13 +83,13 @@ Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
                     1.1.1.1 
   History:
     Tunnel:
-      Time since created: 3 hours, 54 minutes
-      Time since path change: 1 hours, 54 minutes
+      Time since created: 1 hours, 40 minutes
+      Time since path change: 40 minutes
     Current LSP:
-      Uptime: 1 hours, 54 minutes
+      Uptime: 40 minutes
       Selection: reoptimation
     Prior LSP:
-      ID: path option 2 [23]
+      ID: path option 2 [24]
       Removal Trigger: reoptimization completed
 ```
 

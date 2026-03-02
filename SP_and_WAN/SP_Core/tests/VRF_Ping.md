@@ -1,36 +1,47 @@
 # VRF_Ping Validation Report
-Generated: 2026-03-01 15:51:18.882834
+Generated: 2026-03-02 01:19:15.561889
 
-## SP1-PE1 - CUST_A
+## SP1-PE1
+Router: SP1-PE1
+Command: ping vrf CUST_A 15.15.2.1 repeat 2
 ```
 
 Type escape sequence to abort.
 Sending 2, 100-byte ICMP Echos to 15.15.2.1, timeout is 2 seconds:
 !!
-Success rate is 100 percent (2/2), round-trip min/avg/max = 56/208/360 ms
+Success rate is 100 percent (2/2), round-trip min/avg/max = 88/208/328 ms
 ```
 
-## SP1-PE1 - CUST_B
+## SP1-PE1
+Router: SP1-PE1
+Command: ping vrf CUST_B 15.15.2.1 repeat 2
 ```
 
-% VRF does not have a usable source address
+Type escape sequence to abort.
+Sending 2, 100-byte ICMP Echos to 15.15.2.1, timeout is 2 seconds:
+!!
+Success rate is 100 percent (2/2), round-trip min/avg/max = 60/248/436 ms
 ```
 
-## SP1-PE5 - CUST_A
+## SP1-PE5
+Router: SP1-PE5
+Command: ping vrf CUST_A 15.15.1.1 repeat 2
 ```
 
 Type escape sequence to abort.
 Sending 2, 100-byte ICMP Echos to 15.15.1.1, timeout is 2 seconds:
 !!
-Success rate is 100 percent (2/2), round-trip min/avg/max = 48/66/84 ms
+Success rate is 100 percent (2/2), round-trip min/avg/max = 80/82/84 ms
 ```
 
-## SP1-PE5 - CUST_B
+## SP1-PE5
+Router: SP1-PE5
+Command: ping vrf CUST_B 15.15.1.1 repeat 2
 ```
 
 Type escape sequence to abort.
 Sending 2, 100-byte ICMP Echos to 15.15.1.1, timeout is 2 seconds:
-..
-Success rate is 0 percent (0/2)
+!!
+Success rate is 100 percent (2/2), round-trip min/avg/max = 68/70/72 ms
 ```
 
