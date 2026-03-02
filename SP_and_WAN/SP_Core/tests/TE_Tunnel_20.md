@@ -1,10 +1,8 @@
 # TE_Tunnel_20 Validation Report
-Generated: 2026-03-02 01:19:15.561791
+Generated: 2026-03-02 01:40:17.601418
 
-## SP1-PE1
-Router: SP1-PE1
-Command: show mpls traffic-eng tunnels tunnel 20
 ```
+SP1-PE1#show mpls traffic-eng tunnels tunnel 20
 
 Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
   Status:
@@ -37,20 +35,18 @@ Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
                     5.5.5.5 
   History:
     Tunnel:
-      Time since created: 1 hours, 39 minutes
-      Time since path change: 39 minutes
+      Time since created: 2 hours
+      Time since path change: 1 hours
     Current LSP:
-      Uptime: 39 minutes
+      Uptime: 1 hours
       Selection: reoptimation
     Prior LSP:
       ID: path option 2 [26]
       Removal Trigger: reoptimization completed
 ```
 
-## SP1-PE5
-Router: SP1-PE5
-Command: show mpls traffic-eng tunnels tunnel 20
 ```
+SP1-PE5#show mpls traffic-eng tunnels tunnel 20
 
 Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
   Status:
@@ -83,10 +79,10 @@ Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
                     1.1.1.1 
   History:
     Tunnel:
-      Time since created: 1 hours, 40 minutes
-      Time since path change: 40 minutes
+      Time since created: 2 hours, 1 minutes
+      Time since path change: 1 hours, 1 minutes
     Current LSP:
-      Uptime: 40 minutes
+      Uptime: 1 hours, 1 minutes
       Selection: reoptimation
     Prior LSP:
       ID: path option 2 [24]
