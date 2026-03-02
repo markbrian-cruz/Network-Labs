@@ -1,6 +1,6 @@
 ---
 - name: Define lightweight QoS policy
-  hosts: R1,R5
+  hosts: SP1-PE1,SP1-PE5
   gather_facts: no
   vars_files:
     - "../secrets.yml"

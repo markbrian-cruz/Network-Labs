@@ -1,8 +1,8 @@
 # TE_Tunnel_10 Validation Report
-Generated: 2026-03-02 01:40:17.601401
+Generated: 2026-03-02 13:15:17.048757
 
-```
 SP1-PE1#show mpls traffic-eng tunnels tunnel 10
+```
 
 Name: TO-R5-UPPER                         (Tunnel10) Destination: 5.5.5.5
   Status:
@@ -18,9 +18,9 @@ Name: TO-R5-UPPER                         (Tunnel10) Destination: 5.5.5.5
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/0, 18
+  OutLabel : FastEthernet0/0, 25
   RSVP Signalling Info:
-       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 10, Tun_Instance 27
+       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 10, Tun_Instance 37
     RSVP Path Info:
       My Address: 10.0.0.0   
       Explicit Route: 10.0.0.1 10.0.0.2 10.0.0.3 10.0.0.4 
@@ -36,14 +36,18 @@ Name: TO-R5-UPPER                         (Tunnel10) Destination: 5.5.5.5
                     5.5.5.5 
   History:
     Tunnel:
-      Time since created: 2 hours
-      Time since path change: 1 hours, 59 minutes
+      Time since created: 5 hours, 17 minutes
+      Time since path change: 4 hours, 17 minutes
     Current LSP:
-      Uptime: 1 hours, 59 minutes
+      Uptime: 4 hours, 17 minutes
+      Selection: reoptimation
+    Prior LSP:
+      ID: path option 2 [36]
+      Removal Trigger: reoptimization completed
 ```
 
-```
 SP1-PE5#show mpls traffic-eng tunnels tunnel 10
+```
 
 Name: TO-R1-UPPER                         (Tunnel10) Destination: 1.1.1.1
   Status:
@@ -59,9 +63,9 @@ Name: TO-R1-UPPER                         (Tunnel10) Destination: 1.1.1.1
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/0, 18
+  OutLabel : FastEthernet0/0, 26
   RSVP Signalling Info:
-       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 10, Tun_Instance 25
+       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 10, Tun_Instance 27
     RSVP Path Info:
       My Address: 10.0.0.5   
       Explicit Route: 10.0.0.4 10.0.0.3 10.0.0.2 10.0.0.1 
@@ -77,9 +81,13 @@ Name: TO-R1-UPPER                         (Tunnel10) Destination: 1.1.1.1
                     1.1.1.1 
   History:
     Tunnel:
-      Time since created: 2 hours, 1 minutes
-      Time since path change: 2 hours, 1 minutes
+      Time since created: 5 hours, 18 minutes
+      Time since path change: 4 hours, 18 minutes
     Current LSP:
-      Uptime: 2 hours, 1 minutes
+      Uptime: 4 hours, 18 minutes
+      Selection: reoptimation
+    Prior LSP:
+      ID: path option 2 [26]
+      Removal Trigger: reoptimization completed
 ```
 

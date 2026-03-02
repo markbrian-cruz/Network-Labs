@@ -1,48 +1,48 @@
 # NTP_Status Validation Report
-Generated: 2026-03-02 01:40:17.601339
+Generated: 2026-03-02 13:15:17.048719
 
-```
 SP1-PE1#show ntp status
+```
 Clock is synchronized, stratum 4, reference is 172.16.100.2
-nominal freq is 250.0000 Hz, actual freq is 249.9978 Hz, precision is 2**18
-reference time is ED4F68E1.25984CF3 (01:39:45.146 UTC Mon Mar 2 2026)
-clock offset is 40.8252 msec, root delay is 34.68 msec
-root dispersion is 71.69 msec, peer dispersion is 6.88 msec
+nominal freq is 250.0000 Hz, actual freq is 250.0003 Hz, precision is 2**18
+reference time is ED500A5A.1C886F92 (13:08:42.111 UTC Mon Mar 2 2026)
+clock offset is 9.3094 msec, root delay is 86.29 msec
+root dispersion is 57.34 msec, peer dispersion is 11.06 msec
 ```
 
-```
 SP1-BR2#show ntp status
+```
 Clock is synchronized, stratum 4, reference is 172.16.100.2
-nominal freq is 250.0000 Hz, actual freq is 250.0051 Hz, precision is 2**18
-reference time is ED4F6892.302D5CBA (01:38:26.188 UTC Mon Mar 2 2026)
-clock offset is 53.4610 msec, root delay is 66.60 msec
-root dispersion is 108.31 msec, peer dispersion is 32.04 msec
+nominal freq is 250.0000 Hz, actual freq is 250.0044 Hz, precision is 2**18
+reference time is ED500BC6.0A1D96E0 (13:14:46.039 UTC Mon Mar 2 2026)
+clock offset is 11.6055 msec, root delay is 86.46 msec
+root dispersion is 75.50 msec, peer dispersion is 21.47 msec
 ```
 
-```
 SP1-BR3#show ntp status
+```
 Clock is synchronized, stratum 4, reference is 172.16.100.2
-nominal freq is 250.0000 Hz, actual freq is 250.0022 Hz, precision is 2**18
-reference time is ED4F6934.D9F14AC0 (01:41:08.851 UTC Mon Mar 2 2026)
-clock offset is 29.0430 msec, root delay is 54.72 msec
-root dispersion is 69.79 msec, peer dispersion is 15.50 msec
+nominal freq is 250.0000 Hz, actual freq is 249.9934 Hz, precision is 2**18
+reference time is ED500BE9.32A5D7AB (13:15:21.197 UTC Mon Mar 2 2026)
+clock offset is -3.5739 msec, root delay is 126.46 msec
+root dispersion is 58.81 msec, peer dispersion is 12.25 msec
 ```
 
-```
 SP1-RR4#show ntp status
+```
 Clock is synchronized, stratum 4, reference is 172.16.100.2
-nominal freq is 250.0000 Hz, actual freq is 250.0028 Hz, precision is 2**18
-reference time is ED4F691A.4B451FBD (01:40:42.294 UTC Mon Mar 2 2026)
-clock offset is 42.1654 msec, root delay is 22.61 msec
-root dispersion is 89.49 msec, peer dispersion is 22.49 msec
+nominal freq is 250.0000 Hz, actual freq is 249.9948 Hz, precision is 2**18
+reference time is ED500AC3.FEED4708 (13:10:27.995 UTC Mon Mar 2 2026)
+clock offset is -11.1195 msec, root delay is 70.57 msec
+root dispersion is 73.84 msec, peer dispersion is 24.14 msec
 ```
 
-```
 SP1-PE5#show ntp status
+```
 Clock is synchronized, stratum 4, reference is 172.16.100.2
-nominal freq is 250.0000 Hz, actual freq is 249.9979 Hz, precision is 2**18
-reference time is ED4F6929.41B01561 (01:40:57.256 UTC Mon Mar 2 2026)
-clock offset is 19.9224 msec, root delay is 50.51 msec
-root dispersion is 48.54 msec, peer dispersion is 3.56 msec
+nominal freq is 250.0000 Hz, actual freq is 249.9927 Hz, precision is 2**18
+reference time is ED500BE4.09F66ED3 (13:15:16.038 UTC Mon Mar 2 2026)
+clock offset is -6.9893 msec, root delay is 94.54 msec
+root dispersion is 65.58 msec, peer dispersion is 15.69 msec
 ```
 

@@ -1,15 +1,17 @@
-# TE_Tunnel_20 Validation Report
-Generated: 2026-03-02 13:15:17.048777
+# TE_Tunnel_10 Validation Report
+Generated: 2026-03-02 01:03:04.193857
 
-SP1-PE1#show mpls traffic-eng tunnels tunnel 20
+## SP1-PE1
+Router: SP1-PE1
+Command: show mpls traffic-eng tunnels tunnel 10
 ```
 
-Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
+Name: TO-R5-UPPER                         (Tunnel10) Destination: 5.5.5.5
   Status:
     Admin: up         Oper: up     Path: valid       Signalling: connected
 
-    path option 1, type explicit PATH-LOWER-R1-R5 (Basis for Setup, path weight 20)
-    path option 2, type explicit PATH-UPPER-R1-R5
+    path option 1, type explicit PATH-UPPER-R1-R5 (Basis for Setup, path weight 30)
+    path option 2, type explicit PATH-LOWER-R1-R5
 
   Config Parameters:
     Bandwidth: 1        kbps (Global)  Priority: 7  7   Affinity: 0x0/0xFFFF
@@ -18,12 +20,13 @@ Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/1, 25
+  OutLabel : FastEthernet0/0, 18
   RSVP Signalling Info:
-       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 20, Tun_Instance 33
+       Src 1.1.1.1, Dst 5.5.5.5, Tun_Id 10, Tun_Instance 27
     RSVP Path Info:
-      My Address: 10.0.0.6   
-      Explicit Route: 10.0.0.7 10.0.0.8 10.0.0.9 5.5.5.5 
+      My Address: 10.0.0.0   
+      Explicit Route: 10.0.0.1 10.0.0.2 10.0.0.3 10.0.0.4 
+                      10.0.0.5 5.5.5.5 
       Record Route:  NONE
       Tspec: ave rate=1 kbits, burst=1000 bytes, peak rate=1 kbits
     RSVP Resv Info:
@@ -35,21 +38,23 @@ Name: TO-R5-LOWER                         (Tunnel20) Destination: 5.5.5.5
                     5.5.5.5 
   History:
     Tunnel:
-      Time since created: 5 hours, 17 minutes
-      Time since path change: 5 hours, 16 minutes
+      Time since created: 1 hours, 22 minutes
+      Time since path change: 1 hours, 22 minutes
     Current LSP:
-      Uptime: 5 hours, 16 minutes
+      Uptime: 1 hours, 22 minutes
 ```
 
-SP1-PE5#show mpls traffic-eng tunnels tunnel 20
+## SP1-PE5
+Router: SP1-PE5
+Command: show mpls traffic-eng tunnels tunnel 10
 ```
 
-Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
+Name: TO-R1-UPPER                         (Tunnel10) Destination: 1.1.1.1
   Status:
     Admin: up         Oper: up     Path: valid       Signalling: connected
 
-    path option 1, type explicit PATH-LOWER-R5-R1 (Basis for Setup, path weight 20)
-    path option 2, type explicit PATH-UPPER-R5-R1
+    path option 1, type explicit PATH-UPPER-R5-R1 (Basis for Setup, path weight 30)
+    path option 2, type explicit PATH-LOWER-R5-R1
 
   Config Parameters:
     Bandwidth: 1        kbps (Global)  Priority: 7  7   Affinity: 0x0/0xFFFF
@@ -58,12 +63,13 @@ Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
     auto-bw: disabled
 
   InLabel  :  - 
-  OutLabel : FastEthernet0/1, 28
+  OutLabel : FastEthernet0/0, 18
   RSVP Signalling Info:
-       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 20, Tun_Instance 23
+       Src 5.5.5.5, Dst 1.1.1.1, Tun_Id 10, Tun_Instance 25
     RSVP Path Info:
-      My Address: 10.0.0.9   
-      Explicit Route: 10.0.0.8 10.0.0.7 10.0.0.6 1.1.1.1 
+      My Address: 10.0.0.5   
+      Explicit Route: 10.0.0.4 10.0.0.3 10.0.0.2 10.0.0.1 
+                      10.0.0.0 1.1.1.1 
       Record Route:  NONE
       Tspec: ave rate=1 kbits, burst=1000 bytes, peak rate=1 kbits
     RSVP Resv Info:
@@ -75,9 +81,9 @@ Name: TO-R1-LOWER                         (Tunnel20) Destination: 1.1.1.1
                     1.1.1.1 
   History:
     Tunnel:
-      Time since created: 5 hours, 18 minutes
-      Time since path change: 5 hours, 18 minutes
+      Time since created: 1 hours, 23 minutes
+      Time since path change: 1 hours, 23 minutes
     Current LSP:
-      Uptime: 5 hours, 18 minutes
+      Uptime: 1 hours, 23 minutes
 ```
 

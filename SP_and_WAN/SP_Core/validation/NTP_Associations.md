@@ -1,43 +1,53 @@
 # NTP_Associations Validation Report
-Generated: 2026-03-02 13:15:17.048737
+Generated: 2026-03-02 01:03:04.193840
 
-SP1-PE1#show ntp associations
+## SP1-PE1
+Router: SP1-PE1
+Command: show ntp associations
 ```
 
       address         ref clock     st  when  poll reach  delay  offset    disp
-*~172.16.100.2     165.154.233.197   3   401   512  377    47.5    9.31    11.1
+*~172.16.100.2     112.210.51.208    3     1    64  377    51.8  -172.9    98.3
  * master (synced), # master (unsynced), + selected, - candidate, ~ configured
 ```
 
-SP1-BR2#show ntp associations
+## SP1-BR2
+Router: SP1-BR2
+Command: show ntp associations
 ```
 
       address         ref clock     st  when  poll reach  delay  offset    disp
-*~172.16.100.2     165.154.233.197   3   105   256  377    47.7   11.61    21.5
+*~172.16.100.2     112.210.51.208    3   121   256  377    35.8  -35.04    41.5
  * master (synced), # master (unsynced), + selected, - candidate, ~ configured
 ```
 
-SP1-BR3#show ntp associations
+## SP1-BR3
+Router: SP1-BR3
+Command: show ntp associations
 ```
 
       address         ref clock     st  when  poll reach  delay  offset    disp
-*~172.16.100.2     165.154.233.197   3    80   512  377    87.7   -3.57    12.3
+*~172.16.100.2     112.210.51.208    3     5    64   37    68.0    7.52   895.2
  * master (synced), # master (unsynced), + selected, - candidate, ~ configured
 ```
 
-SP1-RR4#show ntp associations
+## SP1-RR4
+Router: SP1-RR4
+Command: show ntp associations
 ```
 
       address         ref clock     st  when  poll reach  delay  offset    disp
-*~172.16.100.2     165.154.233.197   3   381   512  377    31.8  -11.12    24.1
+*~172.16.100.2     112.210.51.208    3   200   256  377    19.6   34.41    29.3
  * master (synced), # master (unsynced), + selected, - candidate, ~ configured
 ```
 
-SP1-PE5#show ntp associations
+## SP1-PE5
+Router: SP1-PE5
+Command: show ntp associations
 ```
 
       address         ref clock     st  when  poll reach  delay  offset    disp
-*~172.16.100.2     165.154.233.197   3   101  1024  377    55.7   -6.99    15.7
+*~172.16.100.2     112.210.51.208    3    98   256  377    39.7    8.77     4.9
  * master (synced), # master (unsynced), + selected, - candidate, ~ configured
 ```
 
