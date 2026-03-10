@@ -1,4 +1,3 @@
-CustomerA3#show running-config
 Building configuration...
 
 Current configuration : 4010 bytes
@@ -13,8 +12,8 @@ hostname CustomerA3
 boot-start-marker
 boot-end-marker
 !
-enable REDACTED $1$681P$ydmEGfJ4gTn5DgECQ08ud/
-enable REDACTED 051B071C325B411B1D
+REDACTED $1$681P$ydmEGfJ4gTn5DgECQ08ud/
+REDACTED 051B071C325B411B1D
 !
 no aaa new-model
 memory-size iomem 5
@@ -49,7 +48,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username admin privilege 15 REDACTED $1$7WWB$3NOI5.ODYINgoJVBF/GAx.
+REDACTED $1$7WWB$3NOI5.ODYINgoJVBF/GAx.
 archive
  log config
   hidekeys
@@ -57,11 +56,11 @@ archive
 !
 crypto isakmp policy 10
  encr aes
- REDACTED
+ authentication pre-share
  group 2
-crypto isakmp REDACTED 4.4.4.4
-crypto isakmp REDACTED 20.0.0.10
-crypto isakmp REDACTED 20.0.0.14
+crypto isakmp key REDACTED 4.4.4.4
+crypto isakmp key REDACTED 20.0.0.10
+crypto isakmp key REDACTED 20.0.0.14
 !
 !
 crypto ipsec transform-set TS_ESP esp-aes esp-sha-hmac 
@@ -166,7 +165,7 @@ access-list 1 permit 192.168.1.0 0.0.0.255
 access-list 99 remark TRUSTED_MANAGEMENT_STATION
 access-list 99 permit 192.168.1.10
 access-list 99 deny   any log
-snmp-server community CustomerA_ReadOnly RO 99
+REDACTED RO 99
 snmp-server enable traps config
 snmp-server enable traps ipsla
 snmp-server host 192.168.1.10 version 2c CustomerA_ReadOnly 

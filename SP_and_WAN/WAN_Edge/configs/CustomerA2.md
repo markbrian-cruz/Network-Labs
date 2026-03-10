@@ -1,4 +1,3 @@
-CustomerA2#show running-config
 Building configuration...
 
 Current configuration : 2717 bytes
@@ -13,8 +12,8 @@ hostname CustomerA2
 boot-start-marker
 boot-end-marker
 !
-enable REDACTED $1$ZwrN$eC5K7NcQtaw4hzLFOX9rQ/
-enable REDACTED 06160E325F59060B01
+REDACTED $1$ZwrN$eC5K7NcQtaw4hzLFOX9rQ/
+REDACTED 06160E325F59060B01
 !
 no aaa new-model
 memory-size iomem 5
@@ -49,7 +48,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username admin privilege 15 REDACTED $1$K2U8$OjuZ9KbZNdgbZx/fDQWbf.
+REDACTED $1$K2U8$OjuZ9KbZNdgbZx/fDQWbf.
 archive
  log config
   hidekeys
@@ -130,7 +129,7 @@ ip sla schedule 20 life forever start-time now
 access-list 99 remark TRUSTED_MANAGEMENT_STATION
 access-list 99 permit 192.168.1.10
 access-list 99 deny   any log
-snmp-server community CustomerA_ReadOnly RO 99
+REDACTED RO 99
 snmp-server enable traps config
 snmp-server enable traps ipsla
 snmp-server host 192.168.1.10 version 2c CustomerA_ReadOnly 

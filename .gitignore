@@ -20,3 +20,7 @@ devices.csv
 # --- Ansible Temp Files ---
 *.retry
 ansible.log
+
+# --- Ansible Local Config ---
+ansible.cfg
+**/ansible.cfg
