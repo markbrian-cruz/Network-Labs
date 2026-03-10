@@ -1,0 +1,173 @@
+Building configuration...
+
+Current configuration : 2752 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname CustomerA1
+!
+boot-start-marker
+boot-end-marker
+!
+REDACTED $1$moAg$DelIHJeX2rN4bzlyWlUCr.
+REDACTED 08314D5D1A0E0A0516
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip domain name lab.local
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+REDACTED $1$t1wj$CdWfiIPFDUou0mil52CC3.
+archive
+ log config
+  hidekeys
+! 
+!
+!
+!
+ip tcp synwait-time 5
+ip ssh version 2
+!
+track 1 rtr 20 reachability
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 15.15.1.2 255.255.255.0
+ speed auto
+ full-duplex
+!
+interface FastEthernet0/1
+ ip address 11.1.1.1 255.255.255.252
+ speed auto
+ full-duplex
+!
+interface FastEthernet1/0
+ ip address 192.168.1.2 255.255.255.0
+ speed auto
+ full-duplex
+ standby 1 ip 192.168.1.1
+ standby 1 priority 110
+ standby 1 preempt
+ standby 1 track 1 decrement 20
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router ospf 1
+ log-adjacency-changes
+ network 1.1.1.1 0.0.0.0 area 0
+ network 192.168.1.0 0.0.0.255 area 0
+ distance 250
+!
+router bgp 64850
+ no synchronization
+ bgp router-id 15.15.1.2
+ bgp log-neighbor-changes
+ network 1.1.1.1 mask 255.255.255.255
+ network 11.1.1.0 mask 255.255.255.252
+ network 15.15.1.0 mask 255.255.255.0
+ redistribute ospf 1 route-map OSPF_TO_BGP
+ neighbor 11.1.1.2 remote-as 64850
+ neighbor 11.1.1.2 next-hop-self
+ neighbor 15.15.1.1 remote-as 65000
+ neighbor 15.15.1.1 REDACTED 1435353B33253F3F2C
+ no auto-summary
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 FastEthernet0/1
+ip route 15.15.2.0 255.255.255.0 FastEthernet0/0 15.15.1.1
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list OSPF_NET seq 5 permit 192.168.1.0/24
+ip sla 20
+ icmp-echo 15.15.2.2 source-interface FastEthernet0/0
+ frequency 10
+ip sla schedule 20 life forever start-time now
+access-list 99 remark TRUSTED_MANAGEMENT_STATION
+access-list 99 permit 192.168.1.10
+access-list 99 deny   any log
+REDACTED RO 99
+snmp-server enable traps config
+snmp-server enable traps ipsla
+snmp-server host 192.168.1.10 version 2c CustomerA_ReadOnly 
+no cdp log mismatch duplex
+!
+!
+!
+route-map OSPF_TO_BGP permit 10
+ match ip address prefix-list OSPF_NET
+ set origin incomplete
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ privilege level 15
+ logging synchronous
+ login local
+ transport input ssh
+!
+!
+end
