@@ -10,10 +10,12 @@ lib/
 
 # --- Infrastructure Secrets ---
 # VERY IMPORTANT: Don't leak your lab passwords!
+secrets.yml
 hosts.ini
 *.txt
 *.csv
 devices.csv
+
 
 # --- Ansible Temp Files ---
 *.retry
